@@ -18,6 +18,11 @@ createbars()
 
 lower = np.array([0, 0, 0])
 upper = np.array([0, 0, 0])
+"""
+lower = np.array([25, 95, 65])
+upper = np.array([65, 255, 255])
+"""
+
 while True:
     frame = cv2.imread("YellowStick.jpg")
     hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
@@ -30,6 +35,6 @@ while True:
 
     mask = cv2.inRange(hsv_frame, lower, upper)
     cv2.imshow("mask", mask)
-    if cv2.waitKey(1) & 0xff == 27:
+    if cv2.waitKey(0):
         break
 cv2.destroyAllWindows()
